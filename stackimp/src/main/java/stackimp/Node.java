@@ -6,7 +6,5 @@ public class Node {
 	private Node next;
 	
 	
-	
-	
 
 }
