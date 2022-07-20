@@ -6,18 +6,42 @@ public class MinStack {
 	
 	private static Node top;
 	private static int size;
-
-
-
-	public void push(int data)
+	
+	
+	public MinStack(Node top) {
+		super();
+		this.top = null;
+	}
+	
+	public MinStack() 
 	{
-		Node newNode = new Node(data);
-		
-		newNode.setNext(top);
-		top = newNode;
-		size++;
 		
 	}
+
+    public void push(int data)
+	{
+	   Node newNode = new Node();
+	   
+	   
+	    
+	   newNode.setData(data);
+	   newNode.setNext(top);
+	   top = newNode;
+	   
+	}
+    
+    public void pop()
+    {
+    	if(top==null)
+    	{
+    		throw new EmptyStackException();
+    	}
+    	else
+    	{
+    		top = top.getNext();
+    	}
+    	
+    }
 
 		
 
@@ -37,10 +61,17 @@ public class MinStack {
     	 MinStack stack = new MinStack();
     	 
 			
-			  stack.push(10); stack.push(20); stack.push(30);
+			  stack.push(10); 
+			  stack.push(20); 
+			  stack.push(30);
 			 
-			  stack.display();
+				 stack.display(); 
+			
+				  stack.pop(); 
+				  stack.pop();
+				 
     	 
+			  stack.display();
     	 
     	
 	}
